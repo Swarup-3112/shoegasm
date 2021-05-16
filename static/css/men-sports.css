@@ -1,0 +1,239 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    color: white;
+    font-family: 'Lato', sans-serif;
+    height: 400vh  
+}
+
+
+   /* ---------------------- NAVIGATION --------------------------  */
+nav ul{
+    font-size: 23px;
+    height: 15vh;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    background-color: black;
+}
+
+img{
+    height: 30px;
+    width: auto;
+}
+
+
+.logo{
+   margin: 20px 450px 0px 100px;
+   scale: 3.5;
+}
+
+#logo{
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.icon{
+    margin-right: 30px;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.icon:hover{
+    transition: 0.2s ease;
+    scale: 1.15;
+}
+
+.menu{
+    margin:25px;
+    font-size: 20px;
+    opacity: 0.6;
+    outline: none;
+    background: none;
+    border: none;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    position: relative;
+}
+
+#col{
+    margin-right: 350px;
+}
+
+.menu::after {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 3px;
+    background: white;
+    transition: width .3s;
+}
+
+.menu:hover::after {
+    width: 100%;
+}
+
+.menu:hover{
+    opacity: 1;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.con {
+    position: absolute;
+    background-color: none;
+    min-width: 134.95px;
+    z-index: 1;
+    visibility: hidden;
+    text-align: left;
+}
+
+.con li {
+    position: relative;
+    color: black;
+    font-size: 17.5px;
+    padding: 12px 16px;
+    text-decoration: none;
+    background-color: rgb(175, 175, 175);
+    /* opacity: 75%; */
+}
+
+#men:hover .con {
+    display: block;
+    padding: 3px 0;
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+}
+
+#women:hover .con {
+    display: block;
+    padding: 3px 0;
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+}
+
+#collection:hover .con {
+    display: block;
+    padding: 3px 0;
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+}
+
+.poster{
+    width: 100%;
+    height: 423.983px;
+}
+
+/* --------------------------- SEARCH BAR ------------------------------- */
+
+nav ul input[type=text] {
+    float: right;
+    padding: 6px 30px;
+    margin: 0px 20px 0px 80px;
+    border: none;
+    background-color: white;
+    border-radius: 15px;
+    font-size: 20px;
+    opacity: 60%;
+    visibility: hidden;
+}
+
+#search:hover nav ul input{
+    visibility: visible;
+    transition: linear 0.3s ease;
+}
+
+/* ------------------------------- Store ---------------------- */
+
+.bar{
+    color: black;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+}
+
+.bar p {
+    display:inline;
+    margin-left: 60px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.dot{
+    cursor: pointer;
+}
+
+.dot::after{
+    content: '.';
+    display: inline-block;
+    margin: 5px 5px ;
+    vertical-align: 12%;
+    font-size: 30px;
+}
+
+#current{
+    font-size: 20px;
+    color: rgb(66, 62, 62);
+}
+
+.bar h3{
+    font-size: 30px;
+    margin: 10px 60px;
+}
+
+.heading{
+    font-size: 30px;
+    margin: 10px 60px;
+    display: block;
+    color: black;
+    font-family: 'Lato', sans-serif;
+}
+
+.content{
+    margin-left: 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+    cursor: pointer;
+}
+
+.card{
+    width: 300px;
+    height: 350px;
+    color: black;
+    margin-bottom: 300px;
+    text-decoration: none;
+}
+
+.product-img{
+    width: 400px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.bold{
+    display:inline;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.color{
+    margin-top: 10px;
+    font-size: 22px;
+    color: rgb(83, 82, 82);
+}
+
+.card span{
+    font-size: 19px;
+    color: rgb(83, 82, 82);
+}
+
+

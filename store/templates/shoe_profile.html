@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Profile</title>
+    <link rel="stylesheet" href="{% static 'css/shoe_profile.css' %}">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com">
+    <link href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel = "stylesheet">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com">
+    <link href = "https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel = "stylesheet">
+</head>
+<body>
+  
+    <!-------------------- NAVIGATION BAR ------------->
+
+    <nav>
+        <ul>
+            <a href="{% url 'home' %}" class = "logo"><button id = "logo" onclick="home()"><img src = "{% static 'images/Logo.png' %}"></button></a>
+            <li><button class = "menu" id = "nr" onclick="new_releases()">NEW RELEASES</button></li>
+            <li><button class = "menu" id = "men">MEN
+                <ul class = "con">
+                    <li><a href = "{% url 'mencasual'%}">Casual Shoes</a></li>
+                    <li><a href = "{% url 'mensport'%}">Sport Shoes</a></li>
+                    <li><a href = "{% url 'mensneaker'%}">Sneaker Shoes</a></li>
+                </ul></button></li>
+            <li><button class = "menu" id = "women">WOMEN
+                <ul class = "con">
+                    <li><a href = "{% url 'womencasual'%}">Casual Shoes</a></li>
+                    <li><a href = "{% url 'womensport'%}">Sport Shoes</a></li>
+                    <li><a href = "{% url 'womensneaker'%}">Sneaker Shoes</a></li>
+                </ul></button></li>
+            <li><button class = "menu" id = "collection">COLLECTIONS
+                <ul class = "con">
+                    <li a href = "#">NIKE</a></li>
+                    <li a href = "#">PUMA</a></li>
+                    <li a href = "#">ADIDAS</a></li>
+                    <li a href = "#">REEBOK</a></li>
+                    <li a href = "#">FILA</a></li>
+                    <li a href = "#">SKECHERS</a></li>
+                </ul></button></li>
+            <li><input id = "searchbar" type="text" placeholder="Search.."></li>
+            <li><button class = "icon" id = "search"><img src = "{% static 'images/searchbar.png' %}"></button></li>
+            <li><button class = "icon" onclick = "cart()"><img src = "{% static 'images/cart.png' %}"></button></li>
+            <li><button class = "icon"><img src = "{% static 'images/login.png' %}"></button></li>
+        </ul>
+    </nav>
+    <div class = "bar">
+        <p class = "dot" onclick = "home()">Home </p>
+        <span class = "dot" font-szie = 20px>{{ profile.gender }}</span> <span class = "dot" font-szie = 20px onclick="men_sports()">{{ profile.category }} </span><span id = "current">{{ profile.name }}</span><br>
+    </div>
+    <div class = "shoe_profile">
+        <img src = "{{ profile.product_img.url }}" class = "main_photo">
+        <h1>{{ profile.name }}</h1>
+        <h2>₹{{ profile.price }}</h2>
+        <p>(including GST)</p>
+        <div class = "preview">
+            <img src = "{% static '/images/shoe_profile/disp 1.png' %}" class = "preview_photo">
+            <img src = "{% static '/images/shoe_profile/disp 2.png' %}" class = "preview_photo">
+            <img src = "{% static '/images/shoe_profile/disp 3.png' %}" class = "preview_photo">
+            <img src = "{% static '/images/shoe_profile/disp 4.png' %}" class = "preview_photo">
+            <img src = "{% static '/images/shoe_profile/disp 5.png' %}" class = "preview_photo">
+            <img src = "{% static '/images/shoe_profile/disp 6.png' %}" class = "preview_photo">
+        </div>
+    </div>
+    <div class = "size">
+        <p>Select Size</p>
+        <div>
+            <button class = "size_btn">03</button>
+            <button class = "size_btn">04</button>
+            <button class = "size_btn">05</button>
+            <button class = "size_btn">06</button>
+            <button class = "size_btn">07</button>
+            <button class = "size_btn">08</button>
+            <button class = "size_btn">09</button>
+            <button class = "size_btn">10</button>
+            <button class = "size_btn">11</button>
+        </div>
+        <div class="profile-btn">
+            <button class = "cart_btn">Add to Cart</button><br>
+            <button class = "buy_btn">Buy Now</button>
+        </div>
+    </div>
+    <script src = "home.js"></script>
+</body>
+</html>

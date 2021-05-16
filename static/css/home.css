@@ -1,0 +1,240 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-image: url(../images/jordan.jpg);
+    color: white;
+    background-size: cover;
+    font-family: 'Lato', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+   /* ---------------------- NAVIGATION --------------------------  */
+
+nav ul{
+    font-size: 23px;
+    height: 15vh;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+img{
+    height: 30px;
+    width: auto;
+}
+
+
+.logo{
+   margin: 20px 450px 0px 100px;
+   scale: 3.5;
+}
+
+.icon{
+    margin-right: 30px;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.icon:hover{
+    transition: 0.2s ease;
+    scale: 1.15;
+}
+
+.menu{
+    margin:25px;
+    font-size: 20px;
+    opacity: 0.6;
+    outline: none;
+    background: none;
+    border: none;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    position: relative;
+}
+
+#col{
+    margin-right: 350px;
+}
+
+.menu::after {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 3px;
+    background: white;
+    transition: width .3s;
+}
+
+.menu:hover::after {
+    width: 100%;
+}
+
+.menu:hover{
+    opacity: 1;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.con {
+    position: absolute;
+    background-color: none;
+    min-width: 134.95px;
+    z-index: 1;
+    visibility: hidden;
+    text-align: left;
+}
+
+.con li {
+    position: relative;
+    color: black;
+    font-size: 17.5px;
+    padding: 12px 16px;
+    text-decoration: none;
+    border: 1px black;
+    background-color: white;
+    opacity: 75%;
+}
+
+#men:hover .con {
+    display: block;
+    padding: 3px 0;
+    width: 100%;
+    visibility: visible;
+}
+
+#women:hover .con {
+    display: block;
+    padding: 3px 0;
+    width: 100%;
+    visibility: visible;
+}
+
+#collection:hover .con {
+    display: block;
+    padding: 3px 0;
+    width: 100%;
+    visibility: visible;
+}
+
+/* --------------------------- SEARCH BAR ------------------------------- */
+
+nav ul input[type=text] {
+    float: right;
+    padding: 6px 30px;
+    margin: 0px 20px 0px 96px;
+    border: none;
+    background-color: white;
+    border-radius: 15px;
+    font-size: 20px;
+    opacity: 60%;
+    visibility: hidden;
+}
+
+#search:hover nav ul input{
+    visibility: visible;
+    transition: linear 0.3s ease;
+}
+
+/* ---------------------------- HERO SECTION ------------------------- */
+
+.hero{
+    height: 85vh;
+}
+
+.main-outlet{
+    position: absolute;
+    top: 550px;
+}
+.outlet{
+    list-style: none;
+    display: inline-block;
+}
+
+.outlet li{
+    margin-bottom: 15px;
+}
+
+.outlet li button{
+    font-size: 23px;
+    opacity: 0.6;
+    outline: none;
+    background: none;
+    border: none;
+    color: white;
+}
+
+.outlet li button::before{
+    content:'';
+    display: inline-block;
+    vertical-align:middle;
+    margin-right: 7px;
+    width: 50px;
+    height: 3px;
+    background: white;
+    visibility: hidden;
+}
+
+.outlet li button.active::before{
+    visibility: visible;
+    /* transition: 0.2s ease; */
+}
+
+.outlet li button:hover {
+    transition: 0.1s ease-in;
+    opacity: 0.8;
+    font-size: 25px;
+}
+
+.outlet li button.active{
+    opacity: 1;
+    font-size: 25px;
+}
+
+.name{
+    position: absolute;
+    left: 1710px;
+}
+
+.vl{
+    border-left: 1.5px solid white;
+    height: 220px;
+    margin-left: 10px;
+}
+
+.com-name{
+    width:20px;
+    word-wrap: break-word;
+    text-align: center;
+    font-size: 22px;
+    margin: 10px 0px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.shop-now{
+    background: none;
+    outline: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    color: white;
+    border: 2px solid white;
+    border-radius: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 700px;
+    left: 1400px;
+}
+
+.shop-now:hover{
+    background-color: white;
+    color: black;
+    border-radius: 30px;
+    transition: 0.2s ease;
+}

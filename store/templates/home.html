@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoegasm</title>
+    <link rel="stylesheet" href="{% static '/css/home.css'%} ">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com">
+    <link href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel = "stylesheet">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com">
+    <link href = "https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel = "stylesheet">
+</head>
+<body>
+   
+    <!-------------------- NAVIGATION BAR ------------->
+   
+    <nav>
+        <ul>
+            <li class = "logo"><img src = "{% static 'images/Logo.png' %}"></li>
+            <a href="{% url 'store' %}"><button class = "menu" id = "nr" onclick="new_releases()">NEW RELEASES</button></a>
+            <li><button class = "menu" id = "men">MEN
+                <ul class = "con">
+                    <li><a href = "{% url 'mencasual'%}">Casual Shoes</a></li>
+                    <li><a href = "{% url 'mensport'%}">Sport Shoes</a></li>
+                    <li><a href = "{% url 'mensneaker'%}">Sneaker Shoes</a></li>
+                </ul></button></li>
+            <li><button class = "menu" id = "women">WOMEN
+                <ul class = "con">
+                    <li><a href = "{% url 'womencasual'%}">Casual Shoes</a></li>
+                    <li><a href = "{% url 'womensport'%}">Sport Shoes</a></li>
+                    <li><a href = "{% url 'womensneaker'%}">Sneaker Shoes</a></li>
+                </ul></button></li>
+            <li><button class = "menu" id = "collection">COLLECTIONS
+                <ul class = "con">
+                    <li a href = "#">NIKE</a></li>
+                    <li a href = "#">PUMA</a></li>
+                    <li a href = "#">ADIDAS</a></li>
+                    <li a href = "#">REEBOK</a></li>
+                    <li a href = "#">FILA</a></li>
+                    <li a href = "#">SKECHERS</a></li>
+                </ul></button></li>
+            <li><input id = "searchbar" type="text" placeholder="Search.."></li>
+            <li><button class = "icon" id = "search"><img src = "{% static 'images/searchbar.png' %}"></button></li>
+            <li><button class = "icon" onclick = "cart()"><img src = "{% static 'images/cart.png'%}"></button></li>
+            <li><button class = "icon"><img src = "{% static 'images/login.png' %}"></button></li>
+        </ul>
+    </nav>
+
+    <!------------------------ HERO SECTION ------------------------------>
+    
+    <div class = "hero" id = "ho">
+        <div class = "main-outlet">
+            <ul class = "outlet">
+                <li><button id = "img1">LIFESTYLE</button></li>
+                <li><button id = "img2">RUNNING</button></li>
+                <li><button id = "img3" class = "active">JORDAN</button></li>
+                <li><button id = "img4">BASKETBALL</button></li>
+                <li><button id = "img5">FOOTBALL</button></li>
+            </ul>
+        </div>
+        <div class = "name">
+            <div class = "vl"></div>
+            <p class = "com-name">SHOEGASM</p>
+            <div class = "vl"></div>
+        </div>
+        <button class = "shop-now">SHOP NOW</button>
+    </div>
+
+    <script src = "{% static '/js/home.js' %}"></script>
+</body>
+</html>

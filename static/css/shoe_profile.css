@@ -1,0 +1,303 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    color: white;
+    font-family: 'Lato', sans-serif;
+    height: 400vh  
+}
+
+  /* ---------------------- NAVIGATION --------------------------  */
+  nav ul{
+    font-size: 23px;
+    height: 15vh;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    background-color: black;
+}
+
+img{
+    height: 30px;
+    width: auto;
+}
+
+
+.logo{
+   margin: 20px 450px 0px 100px;
+   scale: 3.5;
+}
+
+#logo{
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.icon{
+    margin-right: 30px;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.icon:hover{
+    transition: 0.2s ease;
+    scale: 1.15;
+}
+
+.menu{
+    margin:25px;
+    font-size: 20px;
+    opacity: 0.6;
+    outline: none;
+    background: none;
+    border: none;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    position: relative;
+}
+
+#col{
+    margin-right: 350px;
+}
+
+.menu::after {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 3px;
+    background: white;
+    transition: width .3s;
+}
+
+.menu:hover::after {
+    width: 100%;
+}
+
+.menu:hover{
+    opacity: 1;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.con {
+    position: absolute;
+    background-color: none;
+    min-width: 134.95px;
+    z-index: 1;
+    visibility: hidden;
+    text-align: left;
+}
+
+.con li {
+    position: relative;
+    color: black;
+    font-size: 17.5px;
+    padding: 12px 16px;
+    text-decoration: none;
+    background-color: rgb(175, 175, 175);
+    /* opacity: 75%; */
+}
+
+#men:hover .con {
+    display: block;
+    padding: 3px 0;
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+}
+
+#women:hover .con {
+    display: block;
+    padding: 3px 0;
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+}
+
+#collection:hover .con {
+    display: block;
+    padding: 3px 0;
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+}
+
+.bar{
+    color: black;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+}
+
+.bar p {
+    display:inline;
+    margin-left: 60px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.dot{
+    cursor: pointer;
+}
+
+.dot::after{
+    content: '.';
+    display: inline-block;
+    margin: 5px 5px ;
+    vertical-align: 12%;
+    font-size: 30px;
+}
+
+#current{
+    font-size: 20px;
+    color: rgb(66, 62, 62);
+}
+
+.bar h3{
+    font-size: 30px;
+    margin: 10px 60px;
+}
+
+/* --------------------------- SEARCH BAR ------------------------------- */
+
+nav ul input[type=text] {
+    float: right;
+    padding: 6px 30px;
+    margin: 0px 20px 0px 65px;
+    border: none;
+    background-color: white;
+    border-radius: 15px;
+    font-size: 20px;
+    opacity: 60%;
+    visibility: hidden;
+}
+
+#search:hover nav ul input{
+    visibility: visible;
+    transition: linear 0.3s ease;
+}
+
+/* --------------------------- SHOE DISPLAY ------------------------------- */
+
+.shoe_profile{
+    display: flex;
+    flex-wrap: wrap;
+    color: black;
+}
+
+.main_photo{
+    margin-left: 60px;
+    margin-top: 10px;
+    height: auto;
+    width: 850px;
+}
+
+.shoe_profile h1{
+    margin-left: 40px;
+    margin-top: 30px;
+    height: 60px;
+}
+
+.shoe_profile h2{
+    margin-left: 300px;
+    margin-top: 35px;
+}
+
+.shoe_profile p{
+    position: absolute;
+    margin-left: 1446px;
+    margin-top: 68px;
+    color: rgb(66, 62, 62);
+}
+
+.preview{
+    position: absolute;
+    margin-left: 950px;
+    margin-top: 150px;
+    max-width: 425px;
+    max-height: auto;
+}
+
+.preview_photo{
+    height: 65px;
+    border-radius: 15px;
+    margin: 1.25px;
+}
+/* 
+.preview_photo:focus{
+    border: 1px solid black;
+} */
+
+.size{
+    position: absolute;
+    margin-left: 950px;
+    margin-top: -270px;
+    color: black;
+    max-width: 450px;
+}
+
+.size_btn{
+    border: 1px solid rgb(153, 148, 148);
+    border-radius: 500px;
+    font-size: 20px;
+    background: none;
+    outline: none;
+    padding: 10px;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.size_btn:focus{
+    background-color: black;
+    color: white;
+}
+
+.profile-btn{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    /* align-items: center; */
+}
+
+.cart_btn{
+    color: white;
+    background: black;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 30px;
+    width: 300px;
+    font-size: 20px;
+    padding: 10px;
+    margin: 15px 10px 10px;
+}
+
+.cart_btn:hover{
+    border: 1px solid black;
+    background: none;
+    color: black;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.buy_btn{
+    color: black;
+    background: none;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 30px;
+    width: 300px;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.buy_btn:hover{
+    border: none;
+    background: black;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease;
+}

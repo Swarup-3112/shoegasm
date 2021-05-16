@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoegasm</title>
+    <link rel="stylesheet" href="{% static '/css/home1.css'%} ">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com">
+    <link href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel = "stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel = "preconnect" href = "https://fonts.gstatic.com">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com">
+    <link href = "https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel = "stylesheet">
+</head>
+<body>
+   
+    <!-------------------- NAVIGATION BAR ------------->
+    <section class="main" id="blur">
+    <nav>
+        <ul>
+            <li class = "logo"><img src = "{% static 'images/Logo.png' %}"></li>
+            <a href="{% url 'store' %}"><button class = "menu" id = "nr" onclick="new_releases()">NEW RELEASES</button></a>
+            <li><button class = "menu" id = "men">MEN
+                <ul class = "con">
+                    <li><a href = "{% url 'mencasual'%}">Casual Shoes</a></li>
+                    <li><a href = "{% url 'mensport'%}">Sport Shoes</a></li>
+                    <li><a href = "{% url 'mensneaker'%}">Sneaker Shoes</a></li>
+                </ul></button></li>
+            <li><button class = "menu" id = "women">WOMEN
+                <ul class = "con">
+                    <li><a href = "{% url 'womencasual'%}">Casual Shoes</a></li>
+                    <li><a href = "{% url 'womensport'%}">Sport Shoes</a></li>
+                    <li><a href = "{% url 'womensneaker'%}">Sneaker Shoes</a></li>
+                </ul></button></li>
+            <li><button class = "menu" id = "collection">COLLECTIONS
+                <ul class = "con">
+                    <li a href = "#">NIKE</a></li>
+                    <li a href = "#">PUMA</a></li>
+                    <li a href = "#">ADIDAS</a></li>
+                    <li a href = "#">REEBOK</a></li>
+                    <li a href = "#">FILA</a></li>
+                    <li a href = "#">SKECHERS</a></li>
+                </ul></button></li>
+            <li><input id = "searchbar" type="text" placeholder="Search.."></li>
+            <li><button class = "icon" id = "search"><img src = "{% static 'images/searchbar.png' %}"></button></li>
+            <li><button class = "icon" onclick = "cart()"><img src = "{% static 'images/cart.png'%}"></button></li>
+            <li><button class = "icon" onclick="toggle()"><img src = "{% static 'images/login.png' %}"></button></li>
+        </ul>
+    </nav>
+
+    <!------------------------ HERO SECTION ------------------------------>
+    
+    <div class = "hero" id = "ho">
+        <div class = "main-outlet">
+            <ul class = "outlet">
+                <li><button id = "img1">LIFESTYLE</button></li>
+                <li><button id = "img2">RUNNING</button></li>
+                <li><button id = "img3" class = "active">JORDAN</button></li>
+                <li><button id = "img4">BASKETBALL</button></li>
+                <li><button id = "img5">FOOTBALL</button></li>
+            </ul>
+        </div>
+        <div class = "name">
+            <div class = "vl"></div>
+            <p class = "com-name">SHOEGASM</p>
+            <div class = "vl"></div>
+        </div>
+        <button class = "shop-now">SHOP NOW</button>
+    </div>
+</section>
+    <!------------------------ SIGN-IN/SIGN-UP ------------------------------>
+
+
+    <section class="login" id="login">
+        <div class="container" id="container">
+            <div class="form-container sign-up-container">
+                    <h1 class="main-text">Create Account</h1>
+                    <div class="social">
+                        <i class='bx bxl-facebook apps'></i>
+                        <i class='bx bxl-google apps'></i>
+                        <i class='bx bxl-linkedin apps' ></i>
+                    </div>
+                    <a href="#" class="use-email">or use your email for registration</a>
+                    <form action="#">
+                        <div class="creds">
+                            <div class="field">
+                              <input type="text" required>
+                              <div class="underline"></div>
+                              <label><i class='bx bxs-user login-icon'></i>Username</label>
+                            </div>
+                            <div class="field">
+                                <input type="email" required>
+                                <div class="underline"></div>
+                                <label><i class='bx bxs-envelope login-icon'></i>E-mail</label>
+                            </div>
+                            <div class="field">
+                              <input type="password" required>
+                              <div class="underline"></div>
+                              <label><i class='bx bxs-lock login-icon' ></i>Password</label>
+                            </div>
+                        </div>
+                        <div class="after-sign-up-btn">
+                          <input type="submit" value="Sign Up">
+                        </div>
+                    </form>
+            </div>
+            <div class="form-container sign-in-container">
+                    <h1 class="main-text">Sign In to Shoegasm</h1>
+                    <div class="social">
+                        <i class='bx bxl-facebook apps'></i>
+                        <i class='bx bxl-google apps'></i>
+                        <i class='bx bxl-linkedin apps' ></i>
+                    </div>
+                    <a href="#" class="use-email">or use your email account</a>
+                    <form action="#">
+                        <div class="creds">
+                            <div class="field">
+                              <input type="text" required>
+                              <div class="underline"></div>
+                              <label><i class='bx bxs-user login-icon'></i>Username</label>
+                            </div>
+                            <div class="field">
+                              <input type="password" required>
+                              <div class="underline"></div>
+                              <label><i class='bx bxs-lock login-icon' ></i>Password</label>
+                            </div>
+                        </div>
+                        <a href="#" class="forget-pass">Forgot password?</a>
+                        <div class="sign-in-btn">
+                          <input type="submit" value="Sign in">
+                        </div>
+                    </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <img src="./images/Logo.png" class="after-logo" onclick="home()" alt="">
+                        <h1>Welcome Back!</h1>
+                        <h3>To keep connected with us please <br> login with your personal info</h3>
+                        <button class="after-sign-in-btn" id="signIn">Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <img src="./images/Logo.png" class="login-logo" onclick="home()" alt="">
+                        <h1>Welcome Back!</h1>
+                        <h3>To keep connected with us please <br> login with your personal info</h3>
+                        <button class="sign-up-btn" id="signUp">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        var links = document.querySelectorAll('.outlet li button');
+links.forEach(function (element) {
+  element.addEventListener('click', function (e) 
+  {
+    e.preventDefault();
+    links.forEach(function (element) {
+      element.classList.remove('active');
+    });
+    this.classList.add('active');
+  });
+});
+
+// ---------------------------- change image ------------------------
+
+let lifestyle=document.querySelector('#img1');
+let running=document.querySelector("#img2");
+let jordan=document.querySelector("#img3");
+let basketball=document.querySelector("#img4");
+let football=document.querySelector("#img5");
+
+lifestyle.addEventListener( 'click' , () => {
+    document.getElementById('blur').style.backgroundImage = "url('../images/lifestyle.png')";
+});
+
+running.addEventListener( 'click' , () => {
+  document.getElementById('blur').style.backgroundImage = "url('../images/running.jpg')";
+});
+
+jordan.addEventListener( 'click' , () => {
+  document.getElementById('blur').style.backgroundImage = "url('../images/jordan.jpg')";
+});
+
+basketball.addEventListener( 'click' , () => {
+  document.getElementById('blur').style.backgroundImage = "url('../images/Basketball.png')";
+});
+
+football.addEventListener( 'click' , () => {
+  document.getElementById('blur').style.backgroundImage = "url('../images/Football.jpg')";
+});
+
+lifestyle.addEventListener( 'click' , () => {
+  document.body.style.backgroundImage = "url('../images/lifestyle.png')";
+});
+
+running.addEventListener( 'click' , () => {
+document.body.style.backgroundImage = "url('../images/running.jpg')";
+});
+
+jordan.addEventListener( 'click' , () => {
+document.body.style.backgroundImage = "url('../images/jordan.jpg')";
+});
+
+basketball.addEventListener( 'click' , () => {
+document.body.style.backgroundImage = "url('../images/Basketball.png')";
+});
+
+football.addEventListener( 'click' , () => {
+document.body.style.backgroundImage = "url('../images/Football.jpg')";
+});
+
+// ---------------------------- change page ------------------------
+
+function new_releases() {
+  window.location = "store.html";
+}
+
+function home() {
+  window.location = "home.html";
+}
+
+function men_sports() {
+  window.location = "men-sports.html";
+}
+
+function shoe_profile() {
+  window.location = "shoe_profile.html";
+}
+
+function cart() {
+  window.location = "cart.html";
+}
+
+// ---------------------------- sing-in/sign-up ------------------------
+
+function toggle(){
+  var blur = document.getElementById('blur');
+  blur.classList.toggle('active');
+  var login = document.getElementById('login');
+  login.classList.toggle('active')
+}   
+
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+    </script>
+</body>
+</html>

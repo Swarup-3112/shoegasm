@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/css/men-sports.css' %}">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com">
+    <link href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel = "stylesheet">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com">
+    <link href = "https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel = "stylesheet">
+    <title>Men's Sport Shoes</title>
+</head>
+<body>
+
+    <!-------------------- NAVIGATION BAR ------------->
+
+    <nav>
+        <ul>
+            <a href="{% url 'home' %}" class = "logo"><button id = "logo" onclick="home()"><img src = "{% static 'images/Logo.png' %}"></button></a>
+            <li><button class = "menu" id = "nr" onclick="new_releases()">NEW RELEASES</button></li>
+            <li><button class = "menu" id = "men">MEN
+                <ul class = "con">
+                    <li><a href = "{% url 'mencasual'%}">Casual Shoes</a></li>
+                    <li><a href = "{% url 'mensport'%}">Sport Shoes</a></li>
+                    <li><a href = "{% url 'mensneaker'%}">Sneaker Shoes</a></li>
+                </ul></button></li>
+            <li><button class = "menu" id = "women">WOMEN
+                <ul class = "con">
+                    <li><a href = "{% url 'womencasual'%}">Casual Shoes</a></li>
+                    <li><a href = "{% url 'womensport'%}">Sport Shoes</a></li>
+                    <li><a href = "{% url 'womensneaker'%}">Sneaker Shoes</a></li>
+                </ul></button></li>
+            <li><button class = "menu" id = "collection">COLLECTIONS
+                <ul class = "con">
+                    <li a href = "#">NIKE</a></li>
+                    <li a href = "#">PUMA</a></li>
+                    <li a href = "#">ADIDAS</a></li>
+                    <li a href = "#">REEBOK</a></li>
+                    <li a href = "#">FILA</a></li>
+                    <li a href = "#">SKECHERS</a></li>
+                </ul></button></li>
+            <li><input id = "searchbar" type="text" placeholder="Search.."></li>
+            <li><button class = "icon" id = "search"><img src = "{% static 'images/searchbar.png' %}"></button></li>
+            <li><button class = "icon" onclick = "cart()"><img src = "{% static 'images/cart.png' %}"></button></li>
+            <li><button class = "icon"><img src = "{% static 'images/login.png' %}"></button></li>
+        </ul>
+    </nav>
+    <img class="poster" src="{% static 'images/men-sport-poster.png' %}">
+    <div class = "bar">
+        <p class = "dot" onclick = "home()">Home </p>
+        <span class = "dot" font-szie = 20px>{{ Category.gender }}</span><span id = "current">{{ Category.category }}</span><br>
+        <h3>{{ Category.category }} Shoes
+        </h3>
+    </div>
+
+    <!-------------------- SPORT SHOES ------------->
+
+    <div class="content">
+        {% for i in menproduct %}
+        <a href="{% url 'shoeprofiles' i.name %}" class="card">
+            <img class = "product-img" src ="{{ i.product_img.url }}">
+            <p class="bold"> {{ i.name }} </p>
+            <span>({{i.sub_catogery}})</span> <br>
+            <p class="color">{{i.color}} color</p><br>
+            <p class="bold"> ₹{{i.price}}</p>
+        </a>
+        {% endfor %}
+
+    </div>
+    
+    <script src = "home.js"></script>
+</body>
+</html>

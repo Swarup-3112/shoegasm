@@ -1,0 +1,667 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-image: url(../images/jordan.jpg);
+    background-size: cover;
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+   /* ---------------------- NAVIGATION --------------------------  */
+
+#blur{
+    background-image: url(../images/jordan.jpg);
+    background-size: cover;
+}
+
+nav ul{
+    font-size: 23px;
+    height: 15vh;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+img{
+    height: 30px;
+    width: auto;
+}
+
+.logo{
+   margin: 20px 450px 0px 100px;
+   scale: 2.3;
+}
+
+.icon{
+    margin-right: 30px;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.icon:hover{
+    transition: 0.2s ease;
+    scale: 1.15;
+}
+
+.menu{
+    margin:0 25px;
+    font-size: 20px;
+    opacity: 0.6;
+    outline: none;
+    background: none;
+    border: none;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    position: relative;
+}
+
+#col{
+    margin-right: 350px;
+}
+
+.menu::after {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 3px;
+    background: white;
+    transition: width .3s;
+}
+
+.menu:hover::after {
+    width: 100%;
+}
+
+.menu:hover{
+    opacity: 1;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.con {
+    position: absolute;
+    background-color: none;
+    min-width: 134.95px;
+    z-index: 1;
+    visibility: hidden;
+    text-align: left;
+}
+
+.con li {
+    position: relative;
+    color: black;
+    font-size: 17.5px;
+    padding: 12px 16px;
+    text-decoration: none;
+    border: 1px black;
+    background-color: white;
+    opacity: 75%;
+}
+
+#men:hover .con {
+    display: block;
+    padding: 3px 0;
+    width: 100%;
+    visibility: visible;
+}
+
+#women:hover .con {
+    display: block;
+    padding: 3px 0;
+    width: 100%;
+    visibility: visible;
+}
+
+#collection:hover .con {
+    display: block;
+    padding: 3px 0;
+    width: 100%;
+    visibility: visible;
+}
+
+/* --------------------------- SEARCH BAR ------------------------------- */
+
+nav ul input[type=text] {
+    float: right;
+    padding: 6px 30px;
+    margin: 0px 20px 0px 96px;
+    border: none;
+    background-color: white;
+    border-radius: 15px;
+    font-size: 20px;
+    opacity: 60%;
+    visibility: hidden;
+}
+
+#search:hover nav ul input{
+    visibility: visible;
+    transition: linear 0.3s ease;
+}
+
+.search{
+    margin-left: 145px;
+}
+
+/* ---------------------------- HERO SECTION ------------------------- */
+
+.hero{
+    height: 85vh;
+}
+
+.main-outlet{
+    position: absolute;
+    top: 550px;
+}
+.outlet{
+    list-style: none;
+    display: inline-block;
+}
+
+.outlet li{
+    margin-bottom: 15px;
+}
+
+.outlet li button{
+    font-size: 23px;
+    opacity: 0.6;
+    outline: none;
+    background: none;
+    border: none;
+    color: white;
+}
+
+.outlet li button::before{
+    content:'';
+    display: inline-block;
+    vertical-align:middle;
+    margin-right: 7px;
+    width: 50px;
+    height: 3px;
+    background: white;
+    visibility: hidden;
+}
+
+.outlet li button.active::before{
+    visibility: visible;
+    /* transition: 0.2s ease; */
+}
+
+.outlet li button:hover {
+    transition: 0.1s ease-in;
+    opacity: 0.8;
+    font-size: 25px;
+}
+
+.outlet li button.active{
+    opacity: 1;
+    font-size: 25px;
+}
+
+.name{
+    position: absolute;
+    left: 1860px;
+}
+
+.vl{
+    border-left: 1.5px solid white;
+    height: 220px;
+    margin-left: 10px;
+}
+
+.com-name{
+    width:20px;
+    word-wrap: break-word;
+    text-align: center;
+    font-size: 22px;
+    margin: 10px 0px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.shop-now{
+    background: none;
+    outline: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    color: white;
+    border: 2px solid white;
+    border-radius: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 750px;
+    left: 1400px;
+}
+
+.shop-now:hover{
+    background-color: white;
+    color: black;
+    border-radius: 30px;
+    transition: 0.2s ease;
+}
+
+/* ---------------------------- SIGN-IN/SIGN-UP ------------------------- */
+
+/* #login{
+    position: fixed;
+    top: 15%;
+    left: 20%;
+    margin: 125px auto;
+    max-width: 1163.4px;
+    max-height: 800px;
+    text-align: center;
+    font-family: 'Inder', sans-serif;
+    background: white;
+    color: black;
+    box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.75);
+    border-radius: 40px;
+    visibility: hidden;
+    opacity: 0;
+    transition: ease 0.4s;
+    transform: translate(-15%,-20%);
+} */
+
+
+#login {
+	position: fixed;
+    top: 22%;
+    left: 30%;
+    /* margin: 125px auto; */
+    max-width: 1163.3px; 
+    max-height: 680px;
+    text-align: center;
+    font-family: 'Inder', sans-serif;
+    background: white;
+    color: black;
+    box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.75);
+    border-radius: 40px;
+	visibility: hidden; 
+    opacity: 0; 
+    transition: ease 0.4s;
+    transform: translate(-15%,-20%);
+	/* background: #f6f5f7;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Montserrat', sans-serif;
+	height: 100vh;
+	margin: -20px 0 50px;*/
+} 
+
+#login.active{
+    top: 28%;
+    left: 29%;
+    visibility: visible;
+    opacity: 1;
+}
+
+.main#blur.active{
+    filter: blur(5px);
+    pointer-events: none;
+    user-select: none;
+}
+
+button {
+	transition: transform 80ms ease-in;
+}
+
+button:active {
+	transform: scale(0.95);
+}
+
+
+.creds{
+    margin-top: 40px;
+    padding: 0 70px;
+}
+
+.field{
+    height: 40px;
+    width: 100%;
+    position: relative;
+    margin: 25px 0;
+    padding: 20px auto;
+}
+
+.field input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 17px;
+    border-bottom: 2px solid silver;
+}
+
+.login-icon{
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.field label{
+    position: absolute;
+    font-size: 24px;
+    bottom: 10px;
+    left: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.field input:focus ~ label, .field input:valid ~ label{
+    transform: translateY(-20px);
+    font-size: 20px;
+    color: black;
+}
+
+.field input:hover ~ label , .field input:focus ~ label{
+    opacity: 1;
+}
+
+.field input:focus ~ .icon{
+    font-size: 16px;
+}
+
+:focus{
+    outline: none;
+}
+
+.underline{
+    position: absolute;
+    bottom: -2px;
+    left: 0px;
+    height: 2px;
+    width: 100%;
+}
+
+.underline::before{
+    position: absolute;
+    content: "";
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: black;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.field input:hover ~ .underline::before, .field input:focus ~ .underline::before, .field input:valid ~ .underline::before{
+    transform: scaleX(1);
+}
+
+.forget-pass , .use-email{
+    text-decoration: none;
+    color: black;
+    opacity: 0.5;
+    font-size: 24px;
+    transition: 0.6s ease;
+}
+
+.forget-pass:hover , .use-email:hover{
+    opacity: 1;
+}
+
+.sign-in-btn input{
+    background: black;
+    font-size: 24px;
+    color: white;
+    border: 1px solid black;
+    border-radius: 100px;
+    margin: 20px auto;
+    padding: 15px 70px;
+}
+
+.sign-in-btn input:hover{
+    background: none;
+    color: black;
+    border: 1px solid #000;
+    transition: ease 0.3s;
+    cursor: pointer;
+}
+
+.after-sign-up-btn input{
+    background: black;
+    font-size: 24px;
+    color: white;
+    border: 1px solid black;
+    border-radius: 100px;
+    margin: 20px auto;
+    padding: 15px 70px;
+}
+
+.after-sign-up-btn input:hover{
+    background: none;
+    color: black;
+    border: 1px solid #000;
+    transition: ease 0.3s;
+    cursor: pointer;
+}
+
+.container {
+	background-color: #fff;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 1163.4px;
+	max-width: 100%;
+	min-height: 680px;
+    /* border-bottom-right-radius: 40px;
+    border-top-right-radius: 40px; */
+}
+
+.form-container {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	transition: all 0.6s ease-in-out;
+	max-width: 621px;
+}
+
+.sign-in-container {
+	left: 0;
+	width: 50%;
+	z-index: 2;
+	margin: 0 30px;
+	background-color: white;
+}
+
+.social{
+    margin-bottom: 20px;
+}
+
+.apps{
+    font-size: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 100px;
+    margin: 7px;
+    padding: 8px;
+	color: black;
+}
+
+.container.right-panel-active .sign-in-container {
+	transform: translateX(100%);
+}
+
+.sign-up-container {
+	background-color: white;
+	left: 0;
+	width: 50%;
+	opacity: 0;
+	z-index: 1;
+}
+
+.container.right-panel-active .sign-up-container {
+	transform: translateX(100%);
+	opacity: 1;
+	z-index: 5;
+	animation: show 0.6s;
+}
+
+@keyframes show {
+	0%, 49.99% {
+		opacity: 0;
+		z-index: 1;
+	}
+	
+	50%, 100% {
+		opacity: 1;
+		z-index: 5;
+	}
+}
+
+.overlay-container {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	transition: transform 0.6s ease-in-out;
+	z-index: 100;
+}
+
+.container.right-panel-active .overlay-container{
+	transform: translateX(-100%);
+}
+
+.overlay {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	color: #FFFFFF;
+	position: relative;
+	left: -100%;
+	height: 100%;
+	width: 200%;
+  	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.container.right-panel-active .overlay {
+  	transform: translateX(50%);
+}
+
+.overlay-panel {
+	position: absolute;
+	text-align: center;
+	top: 0;
+	height: 100%;
+	width: 528px;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+	background-image: url("../images/shoe-login.png");
+    background-size: cover;
+}
+
+.overlay-panel h1{
+	margin-top: 200px;
+    font-size: 50px;
+}
+
+.overlay-panel h3{
+    margin: 20px 0;
+}
+
+.overlay-left {
+	transform: translateX(-20%);
+}
+
+.container.right-panel-active .overlay-left {
+	transform: translateX(0);
+}
+
+.overlay-right {
+	right: 0;
+	transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+	transform: translateX(20%);
+}
+
+.apps{
+    font-size: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 100px;
+    margin: 7px;
+    padding: 8px;
+}
+
+.apps:hover{
+    color: #fff;
+    border: 1px solid black;
+    background: black;
+    transition: ease 0.3s;
+    cursor: pointer;
+}
+
+.main-text{
+	font-size: 50px;
+    text-shadow: 0.5px 2px 2px black;
+    margin-top: 86px;
+    margin-bottom: 8px;
+}
+
+.login-logo{
+    margin: 25px;
+    float: right;
+    height: 50px;
+    width: auto;
+}
+
+.after-logo{
+    margin: 25px;
+    float: left;
+    height: 50px;
+    width: auto;
+}
+
+.after-sign-in-btn{
+    background: none;
+    font-size: 24px;
+    color: white;
+    border: 1px solid #fff;
+    border-radius: 100px;
+    margin: 20px auto;
+    padding: 15px 70px;
+}
+
+.after-sign-in-btn:hover{
+    background: black;
+    color: white;
+    border: 1px solid black;
+    transition: ease 0.3s;
+    cursor: pointer;
+}
+
+.sign-up-btn{
+    background: none;
+    font-size: 24px;
+    color: white;
+    border: 1px solid #fff;
+    border-radius: 100px;
+    margin: 20px auto;
+    padding: 15px 70px;
+}
+
+.sign-up-btn:hover{
+    background: black;
+    color: white;
+    border: 1px solid black;
+    transition: ease 0.3s;
+    cursor: pointer;
+}
