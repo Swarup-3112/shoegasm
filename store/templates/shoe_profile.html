@@ -80,10 +80,15 @@
             <button class = "size_btn">11</button>
         </div>
         <div class="profile-btn">
-            <button class = "cart_btn">Add to Cart</button><br>
+            <!-- <form action="" method="POST">
+                {% csrf_token %}
+                <input type="text" name="user" value="{{ request.user }}">
+                <input type="text" name="product" value="{{ profile.name }}">
+                <input type="submit" class = "cart_btn" value="Add to Cart"><br>
+            </form> -->
+            <a href="{% url 'sp' profile.name %}" class = "cart_btn">Add to Cart</a><br>
             <button class = "buy_btn">Buy Now</button>
         </div>
     </div>
-    <script src = "home.js"></script>
 </body>
 </html>

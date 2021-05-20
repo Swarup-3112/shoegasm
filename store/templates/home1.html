@@ -45,7 +45,7 @@
                 </ul></button></li>
             <li><input id = "searchbar" type="text" placeholder="Search.."></li>
             <li><button class = "icon" id = "search"><img src = "{% static 'images/searchbar.png' %}"></button></li>
-            <li><button class = "icon" onclick = "cart()"><img src = "{% static 'images/cart.png'%}"></button></li>
+            <li><a href="{% url 'cart' %}" class = "icon" onclick = "cart()"><img src = "{% static 'images/cart.png'%}"></a></li>
             <li><button class = "icon" onclick="toggle()"><img src = "{% static 'images/login.png' %}"></button></li>
         </ul>
     </nav>
@@ -83,26 +83,28 @@
                         <i class='bx bxl-linkedin apps' ></i>
                     </div>
                     <a href="#" class="use-email">or use your email for registration</a>
-                    <form action="#">
+                    <form method="POST">
                         <div class="creds">
+                          {% csrf_token %}
                             <div class="field">
-                              <input type="text" required>
+                              {{ form.username }}
                               <div class="underline"></div>
                               <label><i class='bx bxs-user login-icon'></i>Username</label>
                             </div>
                             <div class="field">
-                                <input type="email" required>
+                              {{ form.password1 }}
                                 <div class="underline"></div>
-                                <label><i class='bx bxs-envelope login-icon'></i>E-mail</label>
+                                <label><i class='bx bxs-envelope login-icon'></i>{{ form.password1.label }}</label>
                             </div>
                             <div class="field">
-                              <input type="password" required>
+                              {{ form.password2 }}
                               <div class="underline"></div>
-                              <label><i class='bx bxs-lock login-icon' ></i>Password</label>
+                              <label><i class='bx bxs-lock login-icon' ></i>{{ form.password2.label }}</label>
                             </div>
                         </div>
+                        
                         <div class="after-sign-up-btn">
-                          <input type="submit" value="Sign Up">
+                          <input type="submit" value="Sign Up" name="Create User">
                         </div>
                     </form>
             </div>
@@ -114,15 +116,16 @@
                         <i class='bx bxl-linkedin apps' ></i>
                     </div>
                     <a href="#" class="use-email">or use your email account</a>
-                    <form action="#">
+                    <form action="#" method="POST">
+                       {% csrf_token %}
                         <div class="creds">
                             <div class="field">
-                              <input type="text" required>
+                              {{ form.username }}
                               <div class="underline"></div>
                               <label><i class='bx bxs-user login-icon'></i>Username</label>
                             </div>
                             <div class="field">
-                              <input type="password" required>
+                              {{ form.password1 }}
                               <div class="underline"></div>
                               <label><i class='bx bxs-lock login-icon' ></i>Password</label>
                             </div>

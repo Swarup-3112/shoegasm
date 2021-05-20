@@ -46,7 +46,7 @@
             <li><input id = "searchbar" type="text" placeholder="Search.."></li>
             <li><button class = "icon" id = "search"><img src = "{% static 'images/searchbar.png' %}"></button></li>
             <li><button class = "icon" onclick = "cart()"><img src = "{% static 'images/cart.png' %}"></button></li>
-            <li><button class = "icon"><img src = "{% static 'images/login.png' %}"></button></li>
+            <li><a href="{% url 'logout' %}" class = "icon"><img src = "{% static 'images/login.png' %}"></a></li>
         </ul>
     </nav>
     <img class="poster" src="{% static 'images/futureride.png' %}">
@@ -54,6 +54,7 @@
         <p class = "dot" onclick = "home()">Home </p>
         <span>New Releases</span><br>
         <h3>New Arrival</h3>
+        <h3>{{ request.user }}</h3>
     </div>
 
     <!-------------------- NEW ARRIVALS ------------->
@@ -65,7 +66,7 @@
             <p class="bold"> {{ i.name }} </p>
             <span>({{i.sub_catogery}})</span> <br>
             <p class="color">{{i.color}} color</p><br>
-            <p class="bold"> ₹{{i.price}}</p>
+            <p class="bold"> ₹{{i.id}}</p>
         </a>
         {% endfor %}
     </div>

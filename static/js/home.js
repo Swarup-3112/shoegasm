@@ -22,8 +22,7 @@ let basketball=document.querySelector("#img4");
 let football=document.querySelector("#img5");
 
 lifestyle.addEventListener( 'click' , () => {
-    // document.body.style.backgroundImage = "url('../images/lifestyle.png')";
-    console.log("hello");
+    document.body.style.backgroundImage = "url('../images/lifestyle.png')";
 });
 
 running.addEventListener( 'click' , () => {

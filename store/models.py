@@ -1,4 +1,8 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.db.models.base import Model
+from django.db.models.deletion import CASCADE
+from django.db.models.fields import SlugField
 
 # Create your models here.
 
@@ -26,3 +30,9 @@ class product(models.Model):
 
     def __str__(self):
      return self.name
+
+class cart(models.Model):
+    product_id = models.ForeignKey(product , on_delete=CASCADE)
+    customer = models.ForeignKey(User , on_delete=CASCADE)
+    def __str__(self):
+         return self.customer.username

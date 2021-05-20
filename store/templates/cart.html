@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="{% static '/css/cart.css'%} ">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-------------------- NAVIGATION BAR ------------->
+
+    <nav>
+        <ul>
+            <a href="{% url 'home' %}" class = "logo"><button id = "logo" onclick="home()"><img src = "{% static 'images/Logo.png' %}"></button></a>
+            <a href="{% url 'store' %}"><button class = "menu" id = "nr" onclick="new_releases()">NEW RELEASES</button></a>
+            <li><button class = "menu" id = "men">MEN
+                <ul class = "con">
+                    <li><a href = "{% url 'mencasual'%}">Casual Shoes</a></li>
+                    <li><a href = "{% url 'mensport'%}">Sport Shoes</a></li>
+                    <li><a href = "{% url 'mensneaker'%}">Sneaker Shoes</a></li>
+                </ul></button></li>
+            <li><button class = "menu" id = "women">WOMEN
+                <ul class = "con">
+                    <li><a href = "{% url 'womencasual'%}">Casual Shoes</a></li>
+                    <li><a href = "{% url 'womensport'%}">Sport Shoes</a></li>
+                    <li><a href = "{% url 'womensneaker'%}">Sneaker Shoes</a></li>
+                </ul></button></li>
+            <li><button class = "menu" id = "collection">COLLECTIONS
+                <ul class = "con">
+                    <li a href = "#">NIKE</a></li>
+                    <li a href = "#">PUMA</a></li>
+                    <li a href = "#">ADIDAS</a></li>
+                    <li a href = "#">REEBOK</a></li>
+                    <li a href = "#">FILA</a></li>
+                    <li a href = "#">SKECHERS</a></li>
+                </ul></button></li>
+            <li><input id = "searchbar" type="text" placeholder="Search.."></li>
+            <li><button class = "icon" id = "search"><img src = "{% static 'images/searchbar.png' %}"></button></li>
+            <li><button class = "icon" onclick = "cart()"><img src = "{% static 'images/cart.png'%}"></button></li>
+            <li><button class = "icon" onclick="toggle()"><img src = "{% static 'images/login.png' %}"></button></li>
+        </ul>
+    </nav>
+
+
+    <section class="main-cart">
+        <div class="cart">
+            <h1>Cart</h1>
+            {% for prod in prod %}
+            <div class="cart-items">
+                <img src="{{ prod.product_id.product_img.url }}" class="cart-pic">
+                <div class="info">
+                    <div class="name-info pad">
+                        <p class="name">{{ prod.product_id.name }}</p>
+                        <p class="price">{{ prod.product_id.price }}</p>
+                    </div>
+                    <p class="sub-info pad"></p>
+                    <p class="sub-info pad">{{ prod.product_id.sub_catogery }}</p>
+                    <div class="inline pad">
+                        <p class="sub-info">Size 9</p>
+                        <img src="{% static 'images/expand.png' %}" class="expand">
+                            <p class="sub-info">Quantity 1</p>
+                            <img src="{% static 'images/expand.png' %}" class="expand">
+                    </div>
+                    <form method="POST">
+                        <input type="" value="{{ prod.product_id.id }}" name = "productid">
+                        <a href="{% url 'del' %}" class="remove">Remove</a>
+                    </form>
+                    
+                </div>
+            </div>
+            {% endfor %}
+            <!-- <div class="cart-items">
+                <img src="./images/sports 3.png" class="cart-pic">
+                <div class="info">
+                    <div class="name-info pad">
+                        <p class="name">Jordan One Take II PF</p>
+                        <p class="price">₹8,295</p>
+                    </div>
+                    <p class="sub-info pad"></p>
+                    <p class="sub-info pad">Basketball Shoe</p>
+                    <div class="inline pad">
+                        <p class="sub-info">Size 9</p>
+                        <img src="./images/expand.png" class="expand">
+                            <p class="sub-info">Quantity 1</p>
+                            <img src="./images/expand.png" class="expand">
+                    </div>
+                    <a href="#" class="remove">Remove</a>
+                </div>
+            </div>
+            <div class="cart-items">
+                <img src="./images/casual 4.png" class="cart-pic">
+                    <div class="info">
+                        <div class="name-info pad">
+                            <p class="name">Nike Air Max 1</p>
+                            <p class="price">₹10,995</p>
+                        </div>
+                        <p class="sub-info pad"></p>
+                        <p class="sub-info pad">Casual shoe</p>
+                        <div class="inline pad">
+                            <p class="sub-info">Size 9</p>
+                            <img src="./images/expand.png" class="expand">
+                            <p class="sub-info">Quantity 1</p>
+                            <img src=". /images/expand.png" class="expand">
+                        </div>
+                        <a href="#" class="remove">Remove</a>
+                    </div>
+            </div> -->
+        </div>
+        <div class="summary">
+            <h1>Summary</h1>
+            <p class="sub-price">Subtotal <span>{{ subtotal }}</span></p>
+            <p class="sub-price">Delivery Charges <span>{{ tax }}</span></p>
+            <p class="sub-price total">Total <span>{{ total }}</span></p>
+            <button class="checkout">Checkout</button>
+        </div>
+    </section>
+    <script src="home.js"></script>
+</body>
+
+</html>
